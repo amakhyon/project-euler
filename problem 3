@@ -1,0 +1,32 @@
+
+
+def is_prime(number):
+	factors = [2,3,5,7]
+	flag = True
+	for factor in factors:
+		if number != factor:
+			if number% factor ==0:
+				flag = False
+	return flag
+
+def get_primes(number):
+	primes = []
+	primes.append(2)
+	for i in range(3,number,2):
+		if is_prime(i):
+			primes.append(i)
+	return primes
+
+
+
+def get_factors(target):
+	primes = get_primes(10000)
+	factors = []
+	for prime in primes:
+		if target % prime == 0:
+			factors.append(prime)
+
+	return factors
+print(get_factors(600851475143))
+
+
